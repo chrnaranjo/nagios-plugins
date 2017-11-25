@@ -22,7 +22,7 @@ sub MSG {
 
 #Validaciones de entrada
 unless ( defined $opts{c} )
-{ 
+{
   MSG();
 }
 
@@ -42,7 +42,7 @@ if ( $war >= $crit )
 }
 
 
-#Recojo la informacion del free 
+#Recojo la informacion del free
 my $info = (`/usr/bin/free -m |grep Mem`);
 chomp ($info);
 
@@ -99,4 +99,5 @@ my $war_mem = int( ($mem_total * $war) / 100 );
 my $crit_mem = int( ($mem_total * $crit) / 100 );
 
 print "$state, Used ram $pmem_used% |Ram=$data[2];$crit_mem;$war_mem;$mem_total";
+
 exit $exitcode;
